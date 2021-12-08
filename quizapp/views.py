@@ -70,6 +70,7 @@ class QuizDetailAPI(generics.RetrieveAPIView):
 
 class SaveUsersAnswer(generics.UpdateAPIView):
 	serializer_class = UsersAnswerSerializer
+	queryset = QuizTaker.objects.all()
 	permission_classes = [
 		permissions.IsAuthenticated
 	]
